@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+}
+
+group 'com.github.satr.ask'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+    google()
+}
+
+dependencies {
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-ses', version: '1.11.15'
+    compile 'javax.mail:mail:1.4.4'
+    testCompile 'junit:junit:4.12'
+    compile 'com.amazon.alexa:ask-sdk:2.17.2'
+    compile 'com.amazonaws:aws-lambda-java-log4j2:1.1.0'
+    annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
+    compile group: 'software.aws.rds', name: 'aws-mysql-jdbc', version: '0.1.0'
+    compile group: 'org.json', name: 'json', version: '20160810'
+    compile 'com.google.api-client:google-api-client:1.23.0'
+    compile 'com.google.oauth-client:google-oauth-client-jetty:1.23.0'
+    compile 'com.google.apis:google-api-services-calendar:v3-rev305-1.23.0'
+}
+
+jar {
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
