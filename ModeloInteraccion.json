@@ -1,0 +1,1428 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "reserva vuelos",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "adios"
+                    ]
+                },
+                {
+                    "name": "HelloWorldIntent",
+                    "slots": [],
+                    "samples": [
+                        "hola",
+                        "como estás",
+                        "di hola mundo",
+                        "di hola",
+                        "hola mundo"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "ConsultaVuelo",
+                    "slots": [
+                        {
+                            "name": "origen",
+                            "type": "AMAZON.City"
+                        },
+                        {
+                            "name": "destino",
+                            "type": "AMAZON.City",
+                            "samples": [
+                                "La ciudad es {destino}",
+                                "A {destino}",
+                                "{destino}"
+                            ]
+                        },
+                        {
+                            "name": "mes",
+                            "type": "AMAZON.DATE"
+                        },
+                        {
+                            "name": "fecha",
+                            "type": "AMAZON.DATE"
+                        },
+                        {
+                            "name": "precioMaximo",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "Consultar vuelos para el dia {fecha} desde {origen} a {destino} por {precioMaximo} euros como precio máximo",
+                        "Consultar vuelos a {destino} para el dia {fecha}",
+                        "Consultar vuelos desde {origen} a {destino} para el dia {fecha} por {precioMaximo} euros como mucho",
+                        "Consultar vuelos desde {origen} para el dia {fecha}",
+                        "Consultar vuelos del {fecha}",
+                        "Consultar vuelos del dia {fecha}",
+                        "Que vuelos hay disponibles desde {origen} a {destino}",
+                        "Ver vuelos desde {origen} a {destino}",
+                        "Ver vuelos desde {origen}",
+                        "Ver vuelos de {origen} a {destino}",
+                        "Ver vuelos a {destino}",
+                        "Vuelos a {destino}",
+                        "Qué vuelos hay disponibles a {destino} por {precioMaximo} euros como máximo",
+                        "Quiero consultar un vuelo",
+                        "Consultar vuelos de {origen} a {destino}",
+                        "Consultar vuelos desde {origen} a {destino}",
+                        "Vuelos desde {origen}",
+                        "Qué vuelos hay disponibles desde {origen}"
+                    ]
+                },
+                {
+                    "name": "ReservaVuelo",
+                    "slots": [
+                        {
+                            "name": "origen",
+                            "type": "AMAZON.City",
+                            "samples": [
+                                "Voy a viajar desde {origen}",
+                                "Desde {origen}",
+                                "{origen}",
+                                "Es {origen}",
+                                "La ciudad es {origen}"
+                            ]
+                        },
+                        {
+                            "name": "destino",
+                            "type": "AMAZON.City",
+                            "samples": [
+                                "Quiero ir a {destino}",
+                                "Voy a ir a {destino}",
+                                "Voy a viajar a {destino}",
+                                "A {destino}",
+                                "{destino}"
+                            ]
+                        },
+                        {
+                            "name": "mes",
+                            "type": "AMAZON.DATE"
+                        },
+                        {
+                            "name": "accion",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "precioMaximo",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "fecha",
+                            "type": "AMAZON.DATE"
+                        },
+                        {
+                            "name": "salida",
+                            "type": "AMAZON.TIME"
+                        },
+                        {
+                            "name": "alias",
+                            "type": "AMAZON.SearchQuery"
+                        },
+                        {
+                            "name": "claveSeguridad",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                        },
+                        {
+                            "name": "token",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "Reservar un vuelo",
+                        "Reservar un vuelo a {destino} para el día {fecha}",
+                        "Reservar un vuelo de {origen} a {destino} del día {fecha} a las {salida}",
+                        "Reservar un vuelo a {destino} para el día {fecha} a las {salida}",
+                        "Reservar un vuelo a {destino}",
+                        "Quiero reservar un vuelo de {origen} a {destino} "
+                    ]
+                },
+                {
+                    "name": "VerMisVuelos",
+                    "slots": [
+                        {
+                            "name": "fecha",
+                            "type": "AMAZON.DATE"
+                        },
+                        {
+                            "name": "alias",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "Ver mis reservas del día {fecha}",
+                        "Ver mis reservas realizadas",
+                        "Consultar mis reservas para el día {fecha}",
+                        "Consultar mis reservas del día {fecha}",
+                        "Consultar mis vuelos del día {fecha}",
+                        "Ver mis vuelos del día {fecha}",
+                        "Quiero consultar mis vuelos del {fecha}",
+                        "Quiero ver mis vuelos del {fecha}"
+                    ]
+                },
+                {
+                    "name": "CancelaReserva",
+                    "slots": [
+                        {
+                            "name": "alias",
+                            "type": "AMAZON.SearchQuery",
+                            "samples": [
+                                "{alias}",
+                                "Es {alias}",
+                                "El DNI es {alias}"
+                            ]
+                        },
+                        {
+                            "name": "origen",
+                            "type": "AMAZON.City",
+                            "samples": [
+                                "Sale desde {origen}",
+                                "Desde {origen}",
+                                "Es {origen}",
+                                "{origen}"
+                            ]
+                        },
+                        {
+                            "name": "destino",
+                            "type": "AMAZON.City",
+                            "samples": [
+                                "{destino}",
+                                "El vuelo es a {destino}",
+                                "El viaje es a {destino}",
+                                "El destino es {destino}",
+                                "Es {destino}"
+                            ]
+                        },
+                        {
+                            "name": "fecha",
+                            "type": "AMAZON.DATE",
+                            "samples": [
+                                "{fecha}",
+                                "El {fecha}",
+                                "El día {fecha}",
+                                "Sale el día {fecha}"
+                            ]
+                        },
+                        {
+                            "name": "salida",
+                            "type": "AMAZON.TIME",
+                            "samples": [
+                                "{salida}",
+                                "A las {salida}",
+                                "El vuelo sale a las {salida}"
+                            ]
+                        },
+                        {
+                            "name": "accion",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "claveSeguridad",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                        },
+                        {
+                            "name": "token",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "Cancelar una reserva",
+                        "Cancelar un vuelo del {fecha} a las {salida}",
+                        "Cancelar un vuelo a {destino} desde {origen} que sale el día {fecha} a las {salida}",
+                        "Quiero cancelar una reserva desde {origen} a {destino} del día {fecha} a las {salida}"
+                    ]
+                },
+                {
+                    "name": "ConfiguraUsuario",
+                    "slots": [
+                        {
+                            "name": "dato",
+                            "type": "AMAZON.SearchQuery",
+                            "samples": [
+                                "Mi {dato}",
+                                "La {dato}",
+                                "El {dato}",
+                                "Deseo cambiar mi {dato}",
+                                "{dato}",
+                                "Quiero cambiar mi {dato}"
+                            ]
+                        },
+                        {
+                            "name": "clave",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                        },
+                        {
+                            "name": "tarjeta",
+                            "type": "AMAZON.PhoneNumber"
+                        },
+                        {
+                            "name": "claveSeguridad",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "Cambiar el {dato} de mi usuario",
+                        "Cambiar la {dato} de mi usuario",
+                        "Cambiar mi {dato}",
+                        "Cambiar datos",
+                        "Configurar usuario",
+                        "Cambiar mis datos",
+                        "Configurar mi usuario"
+                    ]
+                },
+                {
+                    "name": "CreaUsuario",
+                    "slots": [
+                        {
+                            "name": "tarjeta",
+                            "type": "AMAZON.PhoneNumber",
+                            "samples": [
+                                "Mi tarjeta es {tarjeta}",
+                                "{tarjeta}",
+                                "Es {tarjeta}"
+                            ]
+                        },
+                        {
+                            "name": "pais",
+                            "type": "AMAZON.Country",
+                            "samples": [
+                                "{pais}",
+                                "En {pais}",
+                                "Mi pais es {pais}",
+                                "Vivo en {pais}"
+                            ]
+                        },
+                        {
+                            "name": "ciudad",
+                            "type": "AMAZON.City",
+                            "samples": [
+                                "La ciudad donde vivo es {ciudad}",
+                                "La ciudad en la que vivo es {ciudad}",
+                                "{ciudad}",
+                                "En {ciudad}",
+                                "Vivo en {ciudad}"
+                            ]
+                        },
+                        {
+                            "name": "confirmacion",
+                            "type": "AMAZON.SearchQuery"
+                        },
+                        {
+                            "name": "clave",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "Crear usuario",
+                        "Crear un usuario",
+                        "Quiero crear un usuario"
+                    ]
+                },
+                {
+                    "name": "CreaPerfil",
+                    "slots": [
+                        {
+                            "name": "nombre",
+                            "type": "AMAZON.FirstName",
+                            "samples": [
+                                "Soy {nombre}",
+                                "{nombre}"
+                            ]
+                        },
+                        {
+                            "name": "DNI",
+                            "type": "AMAZON.PhoneNumber",
+                            "samples": [
+                                "Mi DNI es {DNI}",
+                                "{DNI}"
+                            ]
+                        },
+                        {
+                            "name": "alias",
+                            "type": "AMAZON.SearchQuery",
+                            "samples": [
+                                "{alias}"
+                            ]
+                        },
+                        {
+                            "name": "telefono",
+                            "type": "AMAZON.PhoneNumber",
+                            "samples": [
+                                "{telefono}",
+                                "Mi número de teléfono es {telefono}"
+                            ]
+                        },
+                        {
+                            "name": "fechaNacimiento",
+                            "type": "AMAZON.DATE",
+                            "samples": [
+                                "Mi fecha de nacimiento es el {fechaNacimiento}",
+                                "Nací el {fechaNacimiento}",
+                                "Es el {fechaNacimiento}",
+                                "{fechaNacimiento}"
+                            ]
+                        },
+                        {
+                            "name": "claveSeguridad",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "Quiero crear un perfil",
+                        "Crear un perfil",
+                        "Crear un nuevo perfil"
+                    ]
+                },
+                {
+                    "name": "BorraPerfil",
+                    "slots": [
+                        {
+                            "name": "alias",
+                            "type": "AMAZON.SearchQuery",
+                            "samples": [
+                                "El perfil de {alias}",
+                                "{alias}"
+                            ]
+                        },
+                        {
+                            "name": "claveSeguridad",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "Borrar un perfil",
+                        "Borrar perfil de {alias}",
+                        "Quiero borrar un perfil"
+                    ]
+                },
+                {
+                    "name": "ConfiguraPerfil",
+                    "slots": [
+                        {
+                            "name": "alias",
+                            "type": "AMAZON.SearchQuery",
+                            "samples": [
+                                "{alias}",
+                                "Soy {alias}",
+                                "Mi alias es {alias}"
+                            ]
+                        },
+                        {
+                            "name": "DNI",
+                            "type": "AMAZON.PhoneNumber",
+                            "samples": [
+                                "{DNI}",
+                                "El DNI es {DNI}"
+                            ]
+                        },
+                        {
+                            "name": "dato",
+                            "type": "AMAZON.SearchQuery",
+                            "samples": [
+                                "{dato}",
+                                "Quiero cambiar mi {dato}",
+                                "El {dato}"
+                            ]
+                        },
+                        {
+                            "name": "telefono",
+                            "type": "AMAZON.PhoneNumber"
+                        },
+                        {
+                            "name": "claveSeguridad",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "Cambiar mi {dato} de mi perfil",
+                        "Cambiar el {dato} de mi perfil",
+                        "Configurar un perfil",
+                        "Configurar perfil",
+                        "Quiero configurar un perfil"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "ConsultaVuelo",
+                    "delegationStrategy": "SKILL_RESPONSE",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "origen",
+                            "type": "AMAZON.City",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "destino",
+                            "type": "AMAZON.City",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.110104486007.790922452024"
+                            }
+                        },
+                        {
+                            "name": "mes",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "fecha",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "precioMaximo",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "ReservaVuelo",
+                    "delegationStrategy": "SKILL_RESPONSE",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "origen",
+                            "type": "AMAZON.City",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.40143174715.1425056765988"
+                            }
+                        },
+                        {
+                            "name": "destino",
+                            "type": "AMAZON.City",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.40143174715.926476269164"
+                            }
+                        },
+                        {
+                            "name": "mes",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "accion",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "precioMaximo",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "fecha",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "salida",
+                            "type": "AMAZON.TIME",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "alias",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "CancelaReserva",
+                    "delegationStrategy": "SKILL_RESPONSE",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "alias",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.605983613082.1148929973284"
+                            }
+                        },
+                        {
+                            "name": "origen",
+                            "type": "AMAZON.City",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.613197694314.305244751488"
+                            }
+                        },
+                        {
+                            "name": "destino",
+                            "type": "AMAZON.City",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.613197694314.1142895701946"
+                            }
+                        },
+                        {
+                            "name": "fecha",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.613197694314.1402044051108"
+                            }
+                        },
+                        {
+                            "name": "salida",
+                            "type": "AMAZON.TIME",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "accion",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "claveSeguridad",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "ConfiguraUsuario",
+                    "delegationStrategy": "SKILL_RESPONSE",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "dato",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.164241077992.495644639175"
+                            },
+                            "validations": [
+                                {
+                                    "type": "isInSet",
+                                    "prompt": "Slot.Validation.164241077992.495644639175.279746727956",
+                                    "values": [
+                                        "clave",
+                                        "tarjeta",
+                                        "nombre",
+                                        "contraseña"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "clave",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "tarjeta",
+                            "type": "AMAZON.PhoneNumber",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "claveSeguridad",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "VerMisVuelos",
+                    "delegationStrategy": "SKILL_RESPONSE",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "fecha",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {},
+                            "validations": [
+                                {
+                                    "type": "isGreaterThanOrEqualTo",
+                                    "prompt": "Slot.Validation.1311228315001.956622182774.1397510887530",
+                                    "value": "1994-02-16"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "alias",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "CreaUsuario",
+                    "delegationStrategy": "SKILL_RESPONSE",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "tarjeta",
+                            "type": "AMAZON.PhoneNumber",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.556178302929.733777127227"
+                            }
+                        },
+                        {
+                            "name": "pais",
+                            "type": "AMAZON.Country",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.556178302929.1084369012813"
+                            }
+                        },
+                        {
+                            "name": "ciudad",
+                            "type": "AMAZON.City",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1413959188081.1363563100550"
+                            }
+                        },
+                        {
+                            "name": "confirmacion",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "clave",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "CreaPerfil",
+                    "delegationStrategy": "SKILL_RESPONSE",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "nombre",
+                            "type": "AMAZON.FirstName",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1489892322779.1095924058464"
+                            }
+                        },
+                        {
+                            "name": "DNI",
+                            "type": "AMAZON.PhoneNumber",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1489892322779.290292127285"
+                            }
+                        },
+                        {
+                            "name": "alias",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.645265950118.132012241731"
+                            }
+                        },
+                        {
+                            "name": "telefono",
+                            "type": "AMAZON.PhoneNumber",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1489892322779.768097518159"
+                            }
+                        },
+                        {
+                            "name": "fechaNacimiento",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1489892322779.1105512185047"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "BorraPerfil",
+                    "delegationStrategy": "SKILL_RESPONSE",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "alias",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.540073415438.1336650400440"
+                            }
+                        },
+                        {
+                            "name": "claveSeguridad",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "ConfiguraPerfil",
+                    "delegationStrategy": "SKILL_RESPONSE",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "alias",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1384626667565.551013904113"
+                            }
+                        },
+                        {
+                            "name": "DNI",
+                            "type": "AMAZON.PhoneNumber",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1384626667565.386767253001"
+                            }
+                        },
+                        {
+                            "name": "dato",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1384626667565.668273225646"
+                            },
+                            "validations": [
+                                {
+                                    "type": "isInSet",
+                                    "prompt": "Slot.Validation.1384626667565.668273225646.1115997401571",
+                                    "values": [
+                                        "numero de movil",
+                                        "número de móvil",
+                                        "numero de telefono",
+                                        "teléfono",
+                                        "numero",
+                                        "número de teléfono",
+                                        "número",
+                                        "telefono"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "telefono",
+                            "type": "AMAZON.PhoneNumber",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.736518040596.1595819017863",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Desde donde va a viajar"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Dígame la ciudad origen del vuelo que desea consultar"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.736518040596.692611653155",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Cual es la ciudad destino"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "A donde quiere viajar"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.736518040596",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Ha consultado un vuelo desde {origen} a {destino}"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.283979983861.1035509477823",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿Cómo te llamas?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "¿Cuál es tu nombre?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.283979983861.1007043924055",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Dame una clave de cuatro dígitos"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "¿Cuál es tu clave de cuatro dígitos?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.283979983861.1514521822099",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿Cuál es tu número de teléfono?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Dime tu número de teléfono, por favor"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.283979983861.276035407734",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿En qué estado vives?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "¿En qué país vives?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.283979983861.470050132781",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿En qué ciudad vives?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "¿En qué ciudad estás viviendo?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "¿Cuál es tu ciudad?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.40143174715",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Nada"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.40143174715.1425056765988",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿Desde dónde vas a viajar?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "¿Cúal es la ciudad origen del vuelo?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.40143174715.926476269164",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿A dónde quieres ir?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "¿A dónde vas a viajar?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.40143174715.677849476845",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿Qué día?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "¿Qué día vas a viajar?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.40143174715.274289151343",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿A qué hora es el vuelo?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.664388187299.1195251020440",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿Desde dónde sale el vuelo de la reserva que deseas cancelar?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "¿Cuál es la ciudad origen de la reserva que deseas cancelar?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.664388187299.985530905436",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿Cuál es el destino de la reserva que deseas cancelar?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.664388187299.1604483114493",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿A qué hora sale el vuelo?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.664388187299.584472772556",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿Qué día sale el vuelo?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.664388187299",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿Estás seguro de que deseas cancelar tu reserva del vuelo que sale de {origen} a {destino} el día {fecha} a las {salida} ?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.164241077992.495644639175",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿Qué deseas cambiar?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "¿Qué dato deseas cambiar de tu usuario?"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.164241077992.495644639175.279746727956",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{dato} no es un atributo válido de tu usuario. Pruebe de nuevo."
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.110104486007.790922452024",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿Qué destino quieres consultar?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Dime la ciudad a la que te gustaría viajar"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "¿A dónde deseas viajar?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.180791062869.596996741688",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿En qué mes quiere viajar?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Dígame el mes en el que quiere viajar"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.613197694314.305244751488",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Dime la ciudad origen del vuelo que deseas cancelar"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.613197694314.1402044051108",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Dime la fecha en la que sale el vuelo que deseas cancelar"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.613197694314.1142895701946",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Dime la ciudad destino del vuelo que deseas cancelar"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1589151601945.1349044206077",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿Cuál es el número de tu tarjeta?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Dime el número de tu tarjeta "
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.446661098701.279590303611",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿Cuál es tu nombre de usuario?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Dime tu nombre de usuario"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.82914894409.895121903057",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Dime tu nombre de usuario"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.605983613082.1148929973284",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿Cuál es el alias de la persona del billete?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Dime el alias de la persona que viaja en la reserva que deseas cancelar"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.556178302929.733777127227",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Dime el número de tu tarjeta"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "¿Cuál es el número de tu tarjeta?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.556178302929.1084369012813",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿En qué país vives?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "¿En qué estado vives?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1413959188081.1363563100550",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿Cuál es tu ciudad?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "¿En qué ciudad estás viviendo?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "¿En qué ciudad vives?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1489892322779.1095924058464",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿Cuál es tu nombre?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Dime tu nombre"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1489892322779.290292127285",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿Cuál es tu DNI?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Dime tu DNI"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1489892322779.768097518159",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿Cuál es tu número de teléfono?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Dime tu número de teléfono"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1489892322779.1105512185047",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Dime tu fecha de nacimiento"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "¿Cuál es tu fecha de nacimiento?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.540073415438.1336650400440",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Dime el alias del perfil que deseas borrar"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.540073415438.763397536767",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Dime el DNI del perfil que desea borrar"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1384626667565.668273225646",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Dime el dato que deseas cambiar de tu perfil"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "¿Cuál es el dato que deseas cambiar de tu perfil?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "¿Qué dato deseas cambiar de tu perfil?"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.1384626667565.668273225646.1115997401571",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{dato} no es un atributo válido para ser modificado en tu perfil. Pruebe de nuevo."
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1384626667565.551013904113",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Dime tu alias"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "¿Cuál es tu alias?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1384626667565.386767253001",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Dime el DNI"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.645265950118.132012241731",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Dame un alias para este perfil"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "¿Cuál quieres que sea el alias de este perfil?"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.1311228315001.956622182774.1397510887530",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Introduzca una fecha válida, por favor."
+                    }
+                ]
+            }
+        ]
+    }
+}
